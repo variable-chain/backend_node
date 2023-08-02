@@ -1,0 +1,21 @@
+{
+  "name": "variable_exchange_cron",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "",
+  "author": "Aashutosh Kunwar",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "config": "^3.3.7",
+    "cron": "^2.3.1",
+    "mongoose": "^6.3.5",
+    "mongoose-aggregate-paginate": "^2.0.2",
+    "mongoose-paginate": "^5.0.3",
+    "web3": "^4.0.1",
+    "websocket": "^1.0.34"
+  }
+}

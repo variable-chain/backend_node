@@ -1,0 +1,15 @@
+{
+    "testnet": {
+        "RPC": "https://goerli.infura.io/v3/a3c5814ddd464f9db409c0c908590056",
+        "ETH": {
+            "contractAddress": "0x4B351Ea2A3776E6606493a3925FB01b3211eF5fe"
+        },
+        "BTC": {
+            "contractAddress": "0x7387c9fA09B8A5f2bca3F0AA95FA43c06B550027"
+        },
+        "LINK": {
+            "contractAddress": "0xE32C8A9A84c10474283180b493273D0026CF743c"
+        }
+    },
+    "mainnet": {}
+}

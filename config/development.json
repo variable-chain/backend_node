@@ -1,0 +1,16 @@
+{
+	"port": 3002,
+	"databaseHost": "localhost",
+	"databasePort": "27017",
+	"databaseName": "variable_exchange-dev",
+	"RPC": "https://goerli.infura.io/v3/a3c5814ddd464f9db409c0c908590056",
+	"ETH": {
+		"contractAddress": "0x7c3FB847717a30aE66EAC20c2d4d0B8603FB3Cb4"
+	},
+	"BTC": {
+		"contractAddress": "0xE2731d1d91F343F00485459360704b99f74f6450"
+	},
+	"LINK": {
+		"contractAddress": "0x2Df7355489d09c19527ED3ed6225092193A02038"
+	}
+}
