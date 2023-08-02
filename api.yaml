@@ -1,0 +1,196 @@
+definitions:
+  securitySchemes:
+    tokenauth:
+      type: basic
+      description: bearer auth
+      name: Authorization
+      in: header
+    demouser:
+      type: basic
+
+  login:
+    required:
+      - email
+      - password
+    properties:
+      email:
+        type: string
+      password:
+        type: string
+
+  forgotPassword:
+    required:
+      - email
+    properties:
+      email:
+        type: string
+
+  resetPassword:
+    required:
+      - newPassword
+    properties:
+      newPassword:
+        type: string
+
+  connectWallet:
+    required:
+      - walletAddress
+    properties:
+      walletAddress:
+        type: string
+
+  blockUnblockUser:
+    required:
+      - userId
+      - status
+    properties:
+      userId:
+        type: string
+      status:
+        type: string
+        description: ACTIVE/BLOCK
+
+  addStaticContent:
+    required:
+      - type
+      - title
+      - description
+    properties:
+      type:
+        type: string
+      title:
+        type: string
+      description:
+        type: string
+
+  editStaticContent:
+    required:
+      - _id
+    properties:
+      _id:
+        type: string
+      title:
+        type: string
+      description:
+        type: string
+
+  editSocialLink:
+    required:
+      - _id
+      - link
+    properties:
+      _id:
+        type: string
+      link:
+        type: string
+
+  addSubAdmin:
+    required:
+      - email
+      - password
+      - name
+    properties:
+      email:
+        type: string
+      password:
+        type: string
+      name:
+        type: string
+      permissions:
+        type: object
+        properties:
+          staticManagement:
+            type: boolean
+          orderPairManagement:
+            type: boolean
+          orderHistoryManagement:
+            type: boolean
+          settingsManagement:
+            type: boolean
+          transactionsManagement:
+            type: boolean
+
+  editSubAdmin:
+    required:
+      - _id
+    properties:
+      _id:
+        type: string
+      email:
+        type: string
+      password:
+        type: string
+      name:
+        type: string
+      permissions:
+        type: object
+        properties:
+          staticManagement:
+            type: boolean
+          orderPairManagement:
+            type: boolean
+          orderHistoryManagement:
+            type: boolean
+          settingsManagement:
+            type: boolean
+          transactionsManagement:
+            type: boolean
+
+  editPair:
+    required:
+      - _id
+    properties:
+      _id:
+        type: string
+
+  activeInactivePair:
+    required:
+      - pairId
+    properties:
+      pairId:
+        type: string
+
+  graph:
+    properties:
+      interval:
+        type: number
+      intervalType:
+        type: string
+        nullable: true
+        enum:
+          - minute
+          - hour
+          - day
+          - week
+          - month
+          - year
+
+  order:
+    required:
+      - symbol
+      - price
+      - quantity
+      - orderType
+      - type
+    properties:
+      symbol:
+        type: string
+      price:
+        type: number
+      quantity:
+        type: number
+      orderType:
+        type: string
+        description: orderType ? Limit || Market || Conditional
+      type:
+        type: string
+        description: type ? Buy || Sell
+      takeProfitStopLoss:
+        type: object
+        definitions: optional
+        properties:
+          takeProfit:
+            type: string
+          stopLoss:
+            type: string
+

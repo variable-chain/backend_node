@@ -1,0 +1,38 @@
+{
+	"port": 3001,
+	"hostAddress": "http://localhost:3001/",
+	"web": "http://localhost:3001/reset-password",
+	"databaseHost": "localhost",
+	"databasePort": "27017",
+	"databaseName": "variable_exchange-stag",
+	"jwtsecret": "you@talking@to@me?",
+	"jwtalgo": "HS256",
+	"nodemailer": {
+		"service": "gmail",
+		"from":"aashutosh@variable.exchange",
+		"email": "aashutosh@variable.exchange",
+		"password": "vwtxadvhqqwlizcf"
+	},
+	"swaggerDefinition": {
+		"info": {
+			"title": "variable_exchange",
+			"version": "2.0",
+			"description": "variable_exchange API Docs"
+		},
+		"basePath": "/api/v1",
+		"securityDefinitions": {
+			"tokenauth": {
+				"type": "apiKey",
+				"name": "Authorization",
+				"in": "header"
+			}
+		}
+	},
+	"cloudinary": {
+		"cloud_name": "dr8om5rtw",
+		"api_key": "255229429222789",
+		"api_secret": "UO2Zfydtt5S181bbDz-H3PLlFmY"
+	},
+	"adminWalletAddress": "0xE8C852FB61a6350caa4a5301ECaEa4F5DF2eAdE9",
+	"adminPrivateKey": "80a23ec96849eb42998ea20bc35e064f511767ecbfb434de95b94759402a1e1a"
+}
