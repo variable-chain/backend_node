@@ -6,4 +6,5 @@ module.exports = Object.freeze({
     pair: 'pair',
     graph:'graph',
     order:'order',
+    transaction:'transaction',
 })
