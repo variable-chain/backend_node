@@ -80,6 +80,10 @@ wsServer.on('request', function (request) {
             pairDetailsData(type.pairId);
         }
 
+        if (type.requestType === "order_details") {
+            activePostions(type.pairId);
+        }
+
 
     });
 
@@ -109,6 +113,18 @@ wsServer.on('request', function (request) {
         }
     }
 
+    async function activePostions(pairId) {
+        if (connection.connected) {
+            const result = await websocketController.activeOrders(pairId);
+            if (result) {
+                const data = JSON.stringify(result);
+                connection.sendUTF(data);
+            }
+            setTimeout(() => {
+                activePostions(pairId)
+            }, 1000);
+        }
+    }
 
 
 

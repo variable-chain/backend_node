@@ -1,8 +1,14 @@
 //******************** Importing services ********************/
 import { pairServices } from "../services/pair";
-const { createPair, findPair, updatePair, pairList,pairOHLC, pairListWithOHLC } = pairServices;
+const { createPair, findPair, updatePair, pairList, pairOHLC, pairListWithOHLC } = pairServices;
 import { graphServices } from "../services/graph";
 const { createGraph, findGraph, priceIn24Hour, graphList } = graphServices;
+
+import { orderServices } from "../services/order";
+import status from "../enums/status";
+import orderStatus from "../enums/orderStatus";
+
+const { createOrder, findOrder, updateOrder, orderList } = orderServices;
 //************************************************************/
 
 
@@ -46,7 +52,27 @@ module.exports = {
             responses = (error);
             reject(responses);
         }
+    },
+
+    async activeOrders(pairId) {
+        try {
+            return new Promise(async (resolve, reject) => {
+                const data = await orderList({ pairId: pairId, orderStatus: orderStatus.Pending });
+                const returnOp = {
+                    status: true,
+                    code: 200,
+                    message: "Active orders details has been fetched successfully.",
+                    data: data,
+                };
+                responses = (returnOp);
+                resolve(responses);
+            })
+        } catch (error) {
+            responses = (error);
+            reject(responses);
+        }
     }
+
 }
 
 
